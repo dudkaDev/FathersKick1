@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var squareView: UIView = {
+    private let squareView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
         view.backgroundColor = .green
