@@ -8,12 +8,43 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private lazy var squareView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.backgroundColor = .green
+        view.addShadowOnView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupViews()
+        setConstraints()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        squareView.addGradientOnView()
+    }
+    
+    private func setupViews() {
+        view.backgroundColor = .white
 
-
+        view.addSubview(squareView)
+    }
+    
+    private func setConstraints() {
+        
+        NSLayoutConstraint.activate([
+            squareView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            squareView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
+            squareView.widthAnchor.constraint(equalToConstant: view.frame.width / 4),
+            squareView.heightAnchor.constraint(equalToConstant: view.frame.width / 4)
+        ])
+    }
 }
 
