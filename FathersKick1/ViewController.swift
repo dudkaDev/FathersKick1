@@ -42,8 +42,8 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             squareView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             squareView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
-            squareView.widthAnchor.constraint(equalToConstant: view.frame.width / 4),
-            squareView.heightAnchor.constraint(equalToConstant: view.frame.width / 4)
+            squareView.widthAnchor.constraint(equalToConstant: 100),
+            squareView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
